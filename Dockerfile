@@ -24,10 +24,6 @@ RUN python -m pip install --upgrade pip && \
 # Copy the complete project
 COPY . .
 
-EXPOSE 8501
+EXPOSE 10000
 
-CMD ["streamlit", "run", "app_professional.py", \
-     "--server.port=${PORT:-10000}", \
-     "--server.address=0.0.0.0", \
-     "--server.headless=true", \
-     "--browser.gatherUsageStats=false"]
+CMD ["sh", "-c", "streamlit run app_professional.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true --browser.gatherUsageStats=false"]
