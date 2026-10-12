@@ -1,9 +1,7 @@
 from langgraph.graph import StateGraph, START, END
 from typing import TypedDict, Annotated
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
-from langchain.chat_models import init_chat_model
 from langchain_openai import ChatOpenAI
-from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
 from langgraph.checkpoint.sqlite import SqliteSaver
@@ -16,7 +14,6 @@ import math
 import requests
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-#from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
 import os 
 from typing import Any
@@ -34,9 +31,6 @@ llm = ChatOpenAI(api_key=api_key,
                  temperature=0.7,
                 )
 
-#ollama = init_chat_model("qwen3.8:latest", model_provider="ollama", temperature=0)
-
-embeddings_HF = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
 embeddings = OpenAIEmbeddings(
     model="text-embedding-3-large",
