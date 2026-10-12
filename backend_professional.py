@@ -29,12 +29,12 @@ api_key = os.getenv("OPENAI_API_KEY")
 base_url = os.getenv("BASE_URL")
 
 llm = ChatOpenAI(api_key=api_key,
-                    base_url=base_url,
-                    model="gpt-5.6-luna",
-                    temperature=0.7,
+                 base_url=base_url,
+                 model="gpt-5.6-luna",
+                 temperature=0.7,
                 )
 
-ollama = init_chat_model("qwen3.8:latest", model_provider="ollama", temperature=0)
+#ollama = init_chat_model("qwen3.8:latest", model_provider="ollama", temperature=0)
 
 embeddings_HF = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
