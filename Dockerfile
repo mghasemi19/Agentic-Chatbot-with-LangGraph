@@ -27,7 +27,7 @@ COPY . .
 EXPOSE 8501
 
 CMD ["streamlit", "run", "app_professional.py", \
-     "--server.port=8501", \
+     "--server.port=${PORT:-10000}", \
      "--server.address=0.0.0.0", \
      "--server.headless=true", \
      "--browser.gatherUsageStats=false"]
