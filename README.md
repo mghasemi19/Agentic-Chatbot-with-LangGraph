@@ -1,5 +1,7 @@
 # Agentic-Chatbot-with-LangGraph
 
+![Chatbot Interface](chatbot_img.png)
+
 ### Description: About the deployment
 
 	1. Build docker image of the source code
